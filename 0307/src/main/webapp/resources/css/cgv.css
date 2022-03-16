@@ -1,0 +1,493 @@
+	/*******************************
+		공통 style sheet
+	********************************/
+	* { margin:0; padding:0; }
+	header, div.bg_carousel, footer {
+		width:100%;
+		/*border:1px solid red;*/
+	}
+	div.header_menu, div.carousel, section , div.footer_menu{
+		width:1000px;
+		/*background-color:powderblue;*/
+		margin:auto;
+	}
+	div.bg_footer { text-align:center; }
+	section.login {
+		/*border:1px solid red;*/
+		height:700px;
+	}
+	section.login > h1 {
+		border-left:15px solid #333;
+		border-bottom:1px solid #333;
+		width:30%;
+		font-size:25pt;
+		padding:3px 0 5px 20px;
+		margin:30px 0 30px 100px;
+	}
+	section.login > h1 + form, section.login > h1 + article
+	, section.login > h1 + table {
+		/*border:1px solid blue;*/
+		width:70%;
+		margin:auto;
+	}
+	.btn_style {
+	 	font-size:10pt;
+	 	font-weight:700;
+	 	width:130px;
+	 	padding:10px 0;
+	 	background:tomato;
+	 	color:white;
+	 	border:1px solid white;
+	 	outline:1px double red;
+	 	margin-right:10px;
+	}
+	.btn_style2 {  /* 회원가입 - 중복확인, 주소찾기 버튼 스타일 */
+	 	font-size:9pt;
+	 	width:70px;
+	 	padding:8px 0;
+	 	background:#777;
+	 	color:white;
+	 	border:1px solid white;
+	 	border-radius:7px;
+	 	margin-left:5px;
+	}
+	.btn_style3 {	/* 공지사항, 게시판 버튼 스타일 */
+	 	font-size:10pt;
+	 	font-weight:700;
+	 	width:100px;
+	 	padding:8px 0;
+	 	background:tomato;
+	 	color:white;
+	 	border:1px solid white;
+	 	outline:1px double red;
+	 	margin-right:10px;
+	 	border-radius:5px;
+	}
+	
+	/*********************************************
+		header style sheet
+	**********************************************/
+	header {
+		background-image:url("http://localhost:8899/model2/resources/images/bg_header.gif");
+		width:100%;
+		height:149px;
+	}
+	
+	div.header_menu > nav, div.header_menu > nav > ul, div.header_menu > nav > ul>li {
+		/*border:1px solid blue;*/
+	}
+	div.header_menu > nav > ul {
+		list-style-type:none;
+		overflow:hidden;
+		margin-left:460px;
+		padding-top:10px;
+		width: 700px;
+	}
+	div.header_menu > nav > ul>li {
+		float:left;
+	}
+	div.header_menu > nav > ul> li a{
+		/*background-color:tomato;*/
+		padding:0px 8px;
+		display:block;
+		font-size:9pt;
+		font-weight:700;
+		color:#777;
+		text-decoration:none;
+		border-right:1px solid #777;
+	}
+	div.header_menu > nav > ul> li:last-child a {
+		border-right:none;
+		color:tomato;
+	}
+	div.header_menu>div {
+		clear:left;
+	}
+	div.relative {
+		position:relative;
+	}
+	div.relative > div{
+		width:50%;
+		text-align:center;
+		position:absolute;
+		top:32px;
+		left:230px;
+	}
+	div.relative > div ul {
+		list-style-type:none;
+	}
+	div.relative > div ul>li{
+		display:inline-block;
+	}
+	div.relative > div ul>li >a{
+		display:block;
+		text-decoration:none;
+		color:#696969;
+		font-size:14pt;
+		font-weight:bold;
+		padding-top:3px;
+		margin:0 20px;
+	}
+	div.relative > a > img {
+		position:absolute;
+		top:34px;
+		left:20px;
+	}
+	
+	/**********************************************
+		footer style sheet
+	***********************************************/
+	footer div.bg_footer {
+		/*border:1px solid blue;*/
+		background-color:rgb(254,218,152);
+		margin-top:60px;
+	}
+	footer div.bg_footer img {
+		margin-top:-58px;
+	}
+	footer div.footer_menu nav {
+		border-bottom:1px solid #ddd;	
+	}
+	footer div.footer_menu nav ul {
+		list-style-type:none;
+		overflow:hidden;	
+	}
+	footer div.footer_menu nav ul li {
+		float:left;
+	}
+	footer div.footer_menu nav ul li a{
+		/*background-color:tomato;*/
+		display:block;
+		text-decoration:none;
+		padding:30px 37px 30px 2px;
+		font-size:10pt;
+		color:#777;
+		font-weight:700;
+	}
+	footer div.footer_menu nav ul li a:hover {
+		text-decoration:underline;
+	}
+	footer div.footer_menu nav ul li:last-child {
+		float:right;		
+	}
+	footer div.footer_menu nav ul li:last-child a{
+		padding-right:0;
+	}
+	footer div.footer_menu nav ul li:nth-child(6) a{
+		color:black;
+		text-decoration:underline;
+	}
+	footer div.footer_menu>div span {
+		display:block;
+		font-size:13px;
+		color:#777;
+		padding:3px 0;
+	}
+	footer div.footer_menu>div {
+		margin:20px 0 40px 0;
+	}
+	
+	
+	/**********************************************
+		main style sheet
+	***********************************************/
+	div.bg_carousel {
+		background-image:url("http://localhost:8899/model2/resources/images/carousel_bg.png");		
+		margin-top:-4px;	
+	}
+	div.content section > div  {
+		/*border:1px solid blue;*/
+		text-align:center;
+		margin:20px 0;
+		clear:both;
+	} 
+	div.content section > img {
+		border:1px solid red;
+		width:280px;
+		height:400px;
+		float:right;
+	} 
+	div.event1 {
+		padding-bottom:25px;
+		border-bottom:3px solid #333;
+	}
+	div.event1 img:first-child, div.event2 img:first-child { float:left; }
+	div.event1 img:last-child, div.event2 img:last-child { float:right; }
+	div.event1 img:nth-child(2), div.event1 img:nth-child(3) {
+		margin:0 3px;
+	}
+	div.event2 {
+		border:1px solid red;
+	}
+	div.event2 img:first-child, div.event2 img:last-child {
+		border:7px double #333;
+	}
+	
+	/*****************************************
+		로그인  style
+	******************************************/
+	form[name="loginForm"] ul {
+		list-style-type:none;
+		font-size:10pt;
+	}
+	form[name="loginForm"] ul li {
+		clear:left;		
+	}
+	form[name="loginForm"] ul li label{
+		display:inline-block;
+		width:160px;
+		padding:10px 0;
+		text-align:center;
+		background:#ddd;
+		color:black;
+		float:left;
+		border-radius:4px;
+		font-weight:700;
+	}
+	form[name="loginForm"] ul li input{
+		display:inline-block;
+		width:50%;
+		padding:10px 10px;
+		margin:0 0 10px 10px;
+		border-radius:4px;
+		border:1px solid #ddd;
+	}
+	form[name="loginForm"] ul li:last-child button:first-child {
+		margin-left:180px;
+	}
+	
+	/*****************************************
+		회원가입  style
+	******************************************/
+	form[name="joinForm"] ul {
+		list-style-type:none;
+		font-size:10pt;
+	}
+	
+	form[name="joinForm"] ul label {
+		background:#ddd;
+		width:150px;
+		display:inline-block;
+		text-align:center;
+		padding:8px 0;
+		border-radius:5px;	
+		float:left;	
+		margin-right:10px;
+		margin-bottom:7px;
+	}
+	form[name="joinForm"] ul li  { clear:left; }	
+	.input1 {
+		width:40%;
+		padding:8px 20px;
+		border-radius:4px;
+		border:1px solid #ddd;
+	}
+	.input2 {
+		padding:8px 0;
+	}
+	.email {
+		width:17%;
+		padding:8px 20px;
+		border-radius:4px;
+		border:1px solid #ddd;
+	}
+	.addr {
+		width:45%;
+		padding:8px 20px;
+		border-radius:4px;
+		border:1px solid #ddd;		
+	}
+	
+	.hp {
+		width:80px;
+		padding:8px 10px;
+		border-radius:4px;
+		border:1px solid #ddd;
+		text-align:center;
+	}
+	form[name="joinForm"] textarea {
+		width:65%;
+		height:100px;
+		padding:8px 20px;
+		border-radius:4px;
+		border:1px solid #ddd;
+		
+	}
+	form[name="joinForm"] li:last-child {
+		text-align:center;
+		margin-top:15px;
+	}
+	form[name="joinForm"] input[name="cpass"] +span {
+		font-size:8pt;
+		color:#777;
+	}
+	form[name="joinForm"] input[name="email2"] +select, select[name="hp1"] {
+		margin-left:10px;
+	}
+	
+	
+	/*************************************
+		마이페이지 style
+	**************************************/
+	section.login article div {
+		width:200px;
+		background:tomato;
+		display:inline-block;
+		text-align:center;
+		padding:30px 0;
+		color:white;
+		font-weight:700;
+		border-radius:5px;
+	}
+	section.login article a> div {
+		background-color:tomato;
+		margin-right:20px;		
+	}
+	section.login article div {
+		background:MediumSeaGreen;
+		margin-right:20px;
+	}
+	
+	/*********************************
+		공지사항, 게시판 공통 style
+	**********************************/
+	section.login table , section.login th, section.login td{
+		border-collapse:collapse;
+		border:1px solid #333;
+		text-align:center;	
+		font-size:11pt;	
+	}
+	section.login table th, section.login table td {
+		padding:8px 0;
+	}
+	section.login table th {
+		background:#ddd;
+		color:#333;
+	}
+	
+	/****************************
+		공지사항, 게시판 - 리스트
+	*****************************/
+	table.notice_list tr td:nth-child(2), table.board_list tr td:nth-child(2) {
+		text-align:left;
+		padding-left:20px;
+	}
+	table.notice_list tr td:nth-child(2) a, table.board_list tr td:nth-child(2) a {
+		color:#333;
+		text-decoration:none;
+	}
+	table.notice_list tr td:nth-child(2) a:hover, 
+	table.board_list tr td:nth-child(2) a:hover {
+		text-decoration:underline;
+	}
+	table.notice_list tr:last-child td, table.board_list tr:last-child td {
+		border:1px solid white;
+	}
+	
+	/****************************
+		공지사항, 게시판 - 상세정보
+	*****************************/
+	table.notice_content tr td, table.board_content tr td {
+		text-align:left;
+		padding-left:10px;
+	}
+	table.notice_content tr:last-child td , table.board_content tr:last-child td{
+		text-align:center;
+		border:1px solid white;
+		padding-top:20px;
+	}
+	table.notice_content tr:last-child td a, table.board_content tr:last-child td a {
+		text-decoration:none;
+	}
+	
+	/*********************************
+		게시판 - 리스트
+	*********************************/
+	table.board_list tr:first-child td {
+		text-align:right;
+		padding-right:10px;
+		border:1px solid white;
+		border-bottom:1px solid #333;
+	}
+	table.board_list tr:first-child td button {
+		cursor:pointer;
+		background:tomato;
+		font-weight:600;
+	}
+	
+	/**********************************
+		게시판 - 글쓰기, 수정화면, 삭제화면
+	***********************************/
+	table.board_write, table.board_update, table.board_delete { width:100%; }
+	table.board_write th, table.board_update th  {
+		width:100px;
+	}
+	table.board_write tr td, table.board_update tr td {
+		text-align:left;
+		padding:0 10px;
+	}
+	table.board_write input, table.board_write textarea,
+	table.board_update input, table.board_update textarea {
+		width:94%;
+		padding:7px 0 7px 15px;
+		margin:8px;
+		border-radius:4px;
+		border:1px solid #ddd;
+	}
+	table.board_write textarea, table.board_update textarea {
+		height:200px;		
+		font-family:"맑은 고딕";
+	}
+	table.board_write tr:last-child td, table.board_update tr:last-child td,
+	table.board_delete tr:last-child td {
+		text-align:center;
+		border:1px solid white;
+	}
+	table.board_write tr:last-child button,
+	table.board_update tr:last-child button,
+	table.board_delete tr:last-child td {
+		margin:20px 3px;
+	}
+	table.board_write tr:last-child a,
+	table.board_update tr:last-child a,
+	table.board_delete tr:last-child a {
+		text-decoration:none;
+	}
+
+	/***********************************************
+		게시판 삭제화면
+	************************************************/
+	table.board_delete tr:first-child img {
+		width:40%;
+	}
+	table.board_delete tr:first-child div {
+		margin:10px 0 20px 0;
+		font-size:15pt;
+	}
+	table.board_delete , table.board_delete td {
+		border:1px solid white;
+	} 
+	
+	
+	/*********************************
+		관리자 페이지 - 공지사항 관리
+	*********************************/
+	.admin_notice_bgcolor { /* 공지사항 테이블 제목 백그라운드 */
+		background:tomato;
+		color:white;
+		font-weight:700;
+		text-align:center;
+	}
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

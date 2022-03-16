@@ -1,0 +1,37 @@
+DBconn - java.sql 에서 제공하는
+Connection -  DriverManger 와 url,user,pwd 를 통하여 db와 연결하는 역할
+DriverManager - ojdbc 를 사용하여 Spring 에 사용할 수 있는 Driver를 로드하는 역할 ( Forclass )
+PreparedStatement - (Statement) spring 에서 db에 연결하여 명령을 수행하는 객체 + 해당 객체에 쿼리문을 추가하여 사용함
+Prepared 같은 경우 쿼리문의 일부(값 제외)를 먼저 작성하여 db와 연결하고 실행 하기 전에
+값을 ? 형식으로 순서에 맞게 입력하여 변동성이 다양하고 비교적 구분이 쉬운 방식.
+ResultSet - update,delete,insert 의 경우 0 과 1 로 실패 성공으로만 Return 이 오지만,
+Select 의 경우 ResultSet 을 통하여 값을 받고 .next( 다음으로 읽을 값이 있느냐 ) 를 사용하여 해당 하는
+값 또는 index-column 을 가져옴
+를 이용하여 DB 와 연결 - 연동.
+
+
+하는 방식을 사용하다 ORM (ObjectRelative Mapper)를 사용하는 방식으로 변경
+
+Mybatis( spring 제공 ) 을 사용.
+
+<!-- JDBC --><!-- Mybatis --><!-- DBCP -->
+를 따로 mvc 에 로드한 후, root-context.xml 에서 - ( root 는 서버에 모든 접속에 관한 연결 설정 )
++ ojdbc의 연결 기능은 jdbc 를 통하여
+dbcp를 이용하여 DBConn의 DriverManager + Connection 을 하고
+mybatis 를 이용하여 dbcp 를 통한 db 정보와 mapper 를 매핑 
++ sqlSessionTemplate(mybatis 내부) 으로 mapper를 이용하고 연결을 하는 객체 생성.
+
+으로 전환 한 후 추가 적인 기능 ( file )
+
+file 을 업로드 한다.
+1. jsp 에 form 안에 file 형식의 input을 추가한다.
+2. 해당 file을 받기 위해 dto 에 CommonsMultipartFile 형식을 사용하여 변수를 생성한다.
+3. db에 해당 파일을 2가지 형식으로 저장하다 (bsfile bfile) server에 저장되는 이름(랜덤이름 추가) + 실제 파일 이름.
+4. File 의 .transferTO 를 이용하여 저장한다. 또한 경로를 지정하여 해당 경로에 파일 저장.
+5. download 처리는 File = new FIle(경로,파일이름) 으로 새로 생성.
+
+file download의 경우 
+1. 게시물 선택시 db에 저장된 bsfile bfile을 가져온 후.
+2. 해당 파일의 다운로드를 따로 버튼 생성. + 이후는 db 연결 없이 서버를 통한 과정.
+3. download 시, 입력받은 bsfile값을 사용하여 FIle = new FIle(경로,이름)을 사용하여 가져온 후.
+4. byteArray로 변환, header에 byte(utf-8)를 전송하여 다운로드 실행.

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.board">
+	<!-- 
+	<select id="listAll" resultType="com.spring.model2.dto.BoardDto">
+		select rownum rno, bid, btitle, bhit, to_char(bdate,'yyyy/mm/dd') bdate 
+		from (select bid, btitle, bhit, bdate from board order by bdate desc)
+		where bid like 'b%'
+	</select>
+	 -->
+	<select id="content" resultType="com.spring.model2.dto.BoardDto" parameterType="String">
+	select bid, btitle, bcontent, bhit,to_char(bdate,'yyyy/mm/dd') bdate, bfile, bsfile, bfile2,bsfile2
+				from board where bid=#{bid}
+	</select>
+	
+	<insert id="write" parameterType="com.spring.model2.dto.BoardDto">
+	INSERT INTO BOARD VALUES('b_'||SEQU_BOARD_BID.nextval,#{btitle},#{bcontent},0,sysdate)
+	</insert>
+	
+	<insert id="getWrite" parameterType="com.spring.model2.dto.BoardDto">
+	INSERT INTO BOARD VALUES('b_'||SEQU_BOARD_BID.nextval,#{btitle},#{bcontent},0,sysdate,#{bfile},#{bsfile},#{bfile2},#{bsfile2})
+	</insert>
+	
+	<update id="update" parameterType="com.spring.model2.dto.BoardDto">
+	update board set btitle=#{btitle}, bcontent=#{bcontent} where bid=#{bid}
+	</update>
+	
+	
+	<update id="hit" parameterType="String">
+	update board set bhit = bhit+1 where bid=#{bid} 
+	</update>
+	
+	<delete id="delete" parameterType="String">
+	delete from board where bid=#{bid}
+	</delete>
+	<!-- 
+	<select id="noticeListAll" resultType="com.spring.model2.dto.BoardDto">
+		select rownum rno, bid, btitle, bhit, to_char(bdate,'yyyy/mm/dd') bdate 
+		from (select bid, btitle, bhit, bdate from board order by bdate desc)
+		where bid like 'n%'
+	</select> -->
+	
+	<select id="noticeListAll" parameterType="map" resultType="com.spring.model2.dto.BoardDto">
+		select rno, bid, btitle, bhit, bdate
+		from (select rownum rno, bid, btitle, bhit, to_char(bdate,'yyyy/mm/dd')
+		bdate
+		from (select bid, btitle, bhit, bdate from board where bid like 'n%'
+		order by bdate desc))
+		where rno between #{start} and #{end}
+	</select>
+	
+
+	<insert id="noticeWrite"
+		parameterType="com.spring.model2.dto.BoardDto">
+		INSERT INTO BOARD
+		VALUES('n_'||SEQU_BOARD_NID.nextval,#{btitle},#{bcontent},0,sysdate,'','','','')
+	</insert>
+
+	<select id="count" resultType="int">
+		select count(*) from board where bid like 'b%'
+	</select>
+	
+	<select id="ncount" resultType="int">
+		select count(*) from board where bid like 'n%'
+	</select>
+
+	<select id="listAll" parameterType="map" resultType="com.spring.model2.dto.BoardDto">
+		select rno, bid, btitle, bhit, bdate
+		from (select rownum rno, bid, btitle, bhit, to_char(bdate,'yyyy/mm/dd')
+		bdate
+		from (select bid, btitle, bhit, bdate from board where bid like 'b%'
+		order by bdate desc))
+		where rno between #{start} and #{end}
+	</select>
+	
+	
+	
+</mapper>
